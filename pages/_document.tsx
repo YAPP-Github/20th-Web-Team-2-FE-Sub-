@@ -39,12 +39,6 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/* 폰트 */}
-          <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
-          />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
@@ -62,6 +56,11 @@ export default class MyDocument extends Document {
             });
           `,
             }}
+          />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
           />
         </Head>
         <body>
