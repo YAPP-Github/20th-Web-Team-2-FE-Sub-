@@ -9,18 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: watch ssh
-        run: echo ${{ secrets.SSH_DEPLOY_KEY }} ${{ secrets.USER_EMAIL }}
       - name: Creates output
         run: sh ./build.sh
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
-        env:           
+        env:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
-          source-directory: 'output'
-          destination-github-username: 'leejiho9898'
-          destination-repository-name: 'landing'
+          source-directory: "output"
+          destination-github-username: "leejiho9898"
+          destination-repository-name: "landing"
           user-email: ${{ secrets.USER_EMAIL }}
           target-branch: main
       - name: Test get variable exported by push-to-another-repository
